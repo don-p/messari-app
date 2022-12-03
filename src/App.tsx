@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import { AssetView } from "./components/AssetView";
 import "./App.css";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
       <header className="App-header">
         <p>Messari App</p>
       </header>
+      <AssetView />
     </div>
   );
 }
