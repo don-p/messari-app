@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMetricData, getTimeseriesData } from "../services";
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
 import type { Timeseries, Metrics } from "../services";
 
 type TimeseriesData = {
@@ -49,5 +51,14 @@ export const AssetView = () => {
     );
   }, []);
 
-  return <div></div>;
+  return (
+    <Box flex="1" display="flex" flexDirection="row" color="#ddd">
+      <Box flex="1" display="flex" justifyContent="center" alignItems="center">
+        <Typography>Asset view</Typography>
+      </Box>
+      <Box flex="1" display="flex" justifyContent="center" alignItems="center">
+        <Typography>Metrics view</Typography>
+      </Box>
+    </Box>
+  );
 };
