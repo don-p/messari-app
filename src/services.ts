@@ -1,10 +1,21 @@
 import moment from "moment";
 
-export type Timeseries = {
+export type TimeseriesItem = {
+  timestamp: string;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+};
+
+export type TimeseriesItemColumns = keyof TimeseriesItem;
+
+export type TimeseriesData = {
   data: {
     values: Array<Array<number>>;
     parameters: {
-      columns: Array<string>;
+      columns: Array<TimeseriesItemColumns>;
     };
   };
 };
@@ -20,7 +31,7 @@ export type MarketData = {
   percent_change_usd_last_24_hours: number;
 };
 
-export type Metrics = {
+export type MetricsData = {
   data: {
     symbol: string;
     marketData: MarketData;
