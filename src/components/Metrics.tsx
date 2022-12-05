@@ -17,9 +17,12 @@ export const Metrics: FC<MetricsProps> = ({ data }) => {
         flex="1"
         display="flex"
         flexDirection="column"
-        paddingTop={"24px"}
+        padding={"24px"}
+        marginTop="12px"
         alignItems="flex-start"
         minWidth={280}
+        border="1px solid #555"
+        borderRadius="7px"
       >
         <Typography
           marginY={"12px"}

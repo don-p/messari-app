@@ -74,3 +74,13 @@ export const getMetricData = (assetId: string) => {
 
   return metricDataPromise;
 };
+
+/**
+ * Fetch the list of available assets.
+ * @returns
+ */
+export const getAssets = () => {
+  const assetsDataPromise = fetch(`https://data.messari.io/api/v1/assets`);
+
+  return assetsDataPromise;
+};
