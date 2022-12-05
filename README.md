@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+## Installation/running the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Clone the repo
 
-## Available Scripts
+Clone this git repository into a directory.
 
-In the project directory, you can run:
+### Install dependencies
 
-### `npm start`
+In the project directory, run:
+`npm install`
+
+### Run the application
+
+In the project directory, run:
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Objective
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Build a React + TypeScript web app using the Messari API to display metrics and time-series data into a chart visualization.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Details
 
-### `npm run eject`
+Build an overview page for a given asset powered by the time-series endpoint for that specific asset as well as the metrics endpoint for that asset
+Page should display a general chart visualizing the time-series for that given asset as well as some metrics alongside the chart
+Asset data from the Messari APIs should be fetched directly from within the web application
+[Bonus point] have the ability to switch the selection from one asset to another within the app, which in turns updates the chart visualization as well as the metrics, for a paginated list of assets try https://data.messari.io/api/v1/assets
+Note: Styling and CSS will not be part of the grading criteria however any piece of the UI that blatantly takes away from the experience may be perceived negatively
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Docs
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Time-series endpoint: https://data.messari.io/api/v1/assets/yfi/metrics/price/time-series?start=2021-01-01&end=2021-02-01&interval=1d
+Metrics endpoint: https://data.messari.io/api/v1/assets/yfi/metrics
+In both of the above cases { yfi } inside the URL is replaceable with the symbol/slug of another asset
+Here are the detailed docs: https://messari.io/api/docs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Libraries
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Feel free to choose the libraries at will, the only requirements are building using React and TypeScript
 
-## Learn More
+### Duration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We know that your time is precious and don’t want to make you sink more than a few deep work hours into this.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Deadline
+
+In order to help you find a consecutive chunk of time to work on this, we’ll accept anything sent over within 6 days of receiving the challenge. If you receive it on a Monday, it will be expected to be submitted by EOD Sunday.
+
+### Note
+
+The problem statement is intentionally kept vague, feel free to loosely interpret the statements above and come up with a UI/UX that is to your liking. The main goal of this exercise is to showcase your proficiency in 1) connecting the FE pipelines over an API, 2) the React + TypeScript framework, and 3) producing a consumable web app.
+
+### Code
+
+Feel free to send the code in:
+
+git repository where the code lives
+codesandbox URL
+.tar/.zip file over email
+Basic instructions on how to run are welcomed 🙂
+
+### Docs
+
+API Docs: https://messari.io/api/docs
+Landing page with examples: https://messari.io/api
+
+### Rate limit
+
+Feel free to create an account in Messari and generate an API token, if you run into any rate-limiting we’d be happy to up your account tier if you provide us with an userId

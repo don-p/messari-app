@@ -20,7 +20,7 @@ type TimeseriesProps = {
 export const Timeseries: FC<TimeseriesProps> = ({ data }) => {
   return (
     <Box flex="1" display="flex" flexDirection="column" height="100%">
-      <Typography>Asset Performance</Typography>
+      <Typography fontWeight={"bold"}>Performance</Typography>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <Line type="monotone" dot={false} dataKey="close" stroke="#cc7777" />

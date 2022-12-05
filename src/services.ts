@@ -13,6 +13,8 @@ export type TimeseriesItemColumns = keyof TimeseriesItem;
 
 export type TimeseriesData = {
   data: {
+    name: string;
+    symbol: string;
     values: Array<Array<number>>;
     parameters: {
       columns: Array<TimeseriesItemColumns>;
@@ -21,10 +23,6 @@ export type TimeseriesData = {
 };
 
 export type MarketData = {
-  all_time_high: {
-    at: string;
-    price: number;
-  };
   last_trade_at: string;
   price_usd: number;
   volume_last_24_hours: number;
@@ -34,11 +32,14 @@ export type MarketData = {
 export type MetricsData = {
   data: {
     symbol: string;
-    marketData: MarketData;
+    all_time_high: {
+      at: string;
+      price: number;
+    };
+    market_data: MarketData;
   };
 };
 const TIME_SERIES_INTERVAL = "1d";
-const TIME_SERIES_END = "2021-02-01";
 
 /**
  * Fetch the timeseries data given the passed-in params for the asset and filter criteria, for a 1-month period.
@@ -50,7 +51,7 @@ export const getTimeseriesData = (
   interval: string = TIME_SERIES_INTERVAL
 ) => {
   // Compute start and end of 30-day period.
-  const now = moment(TIME_SERIES_END);
+  const now = moment();
   const end = now.format("YYYY-MM-DD");
   const start = now.subtract(1, "months").format("YYYY-MM-DD");
 
