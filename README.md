@@ -22,7 +22,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Project requirements
+## Project
+
+The app addresses the three use cases below: display timeseries graph; display asset metrics; select an asset from a list of assets.
+Caveats:
+
+- The timeseries graph uses a fixed interval of `1 day` and a fixed time window of `30 days`.
+- The metrics section displays a selected subset of the total response from the metrics API endpoint.
+- The selection of an asset from a list of assets - doesn't use paging, because the `/assets` endpoint didn't seem to provide the usual paging metadata, i.e. `totalCount`, which would be necessary to know the last page, and implementing a pageable list in the UI would have gone beyond the scope of time for this; doesn't use the `fields` query parameter to prune the response fields because the behavior with this seemed inconsistent and returned a different set of assets than with the default params, possibly due to sorting; certain assets seemed to not have the `values` data property populated, and so the graph would not render for those assets, the assets that reliably have this property were BTC, ETH, DOGE, and XRP.
 
 ### Objective
 
